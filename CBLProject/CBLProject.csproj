@@ -157,6 +157,8 @@
     <Content Include="Views\Receive\IndexEcho.cshtml" />
     <Content Include="Views\Receive\IndexArrayModel.cshtml" />
     <Content Include="Views\Receive\IndexArray_Mix.cshtml" />
+    <Content Include="Views\Receive\IndexArrayMix.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

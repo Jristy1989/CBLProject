@@ -133,6 +133,17 @@ namespace CBLProject.Controllers
         {
             return Content("Post ok");
         }
+        public ActionResult IndexArrayMix()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Echo_Multi_MixTypeArgument(string companyId, Product product)
+        {
+            return Content("Post ok");
+        }
+
+
         public ActionResult IndexArray_Mix()
         {
             return View();
