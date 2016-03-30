@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GameLiAdvController.cs" />
     <Compile Include="Controllers\ReceiveController.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -159,6 +160,7 @@
     <Content Include="Views\Receive\IndexArray_Mix.cshtml" />
     <Content Include="Views\Receive\IndexArrayMix.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Test\DevForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -168,7 +170,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Test\" />
+    <Folder Include="Views\GameLiAdv\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DependencyInjection\DependencyInjection.csproj">
+      <Project>{9f59f1a0-72ba-4645-9c1e-52340f8135a4}</Project>
+      <Name>DependencyInjection</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

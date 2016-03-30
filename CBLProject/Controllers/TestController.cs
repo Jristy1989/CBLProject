@@ -12,6 +12,13 @@ namespace CBLProject.Controllers
         // GET: Test
         public ActionResult Index()
         {
+            NameValueCollection nameValueCollection = System.Web.HttpContext.Current.Request.QueryString;
+            var parm1 = nameValueCollection["dev"];
+            return View();
+        }
+
+        public ActionResult DevForm()
+        {
             return View();
         }
     }
