@@ -18,7 +18,10 @@ namespace CBLProject.Controllers
             Monster monster3 = new Monster("关主", 200);
             Monster monster4 = new Monster("最终Boss", 1000);
 
+            List<Customer> custs = new List<Customer>();
 
+            custs.First<Customer>(x =>true);
+            custs.First(Customer.Test);
             //生成角色
             Role role = new Role();
 
@@ -42,6 +45,15 @@ namespace CBLProject.Controllers
             role.Attack(monster4);
             role.Attack(monster4);
             return View();
+        }
+
+        class Customer
+        {
+            public int ID { get; set; }
+            public static bool Test(Customer x)
+            {
+                return x.ID == 5;
+            }
         }
     }
 }
