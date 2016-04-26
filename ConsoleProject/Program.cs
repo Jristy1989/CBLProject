@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleProject.Test;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
@@ -13,13 +14,13 @@ namespace ConsoleProject
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
             //ModifierTest modifier = new ModifierTest();
             //modifier.Invoke();
             //DecoratorTest decorator = new DecoratorTest();
             //decorator.Invoke();
-            //InterfaceProxy proxy = new InterfaceProxy(typeof(Customer));
-            //object tp = proxy.GetTransparentProxy();
+            OrderAOPTest orderaop = new OrderAOPTest();
+            orderaop.Invoke();
         }
     }
 }
