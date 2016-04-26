@@ -7,9 +7,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleProject
+namespace ConsoleProject.MEF
 {
-    class Program2
+    public class MEFPart
     {
         [Import("chinese_hello")]
         public Person oPerson { set; get; }
@@ -17,9 +17,9 @@ namespace ConsoleProject
         [Import("american_hello")]
         public Lazy<Person> oPerson2 { set; get; }
 
-        static void Main(string[] args)
+        public  MEFPart()
         {
-            var oProgram = new Program2();
+            var oProgram = new MEFPart();
             oProgram.MyComposePart();
 
             var strRes = oProgram.oPerson.SayHello("李磊");
@@ -28,7 +28,6 @@ namespace ConsoleProject
 
             Console.Read();
         }
-
         void MyComposePart()
         {
             var catalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
@@ -44,7 +43,6 @@ namespace ConsoleProject
     {
         string SayHello(string name);
     }
-
     [Export("chinese_hello", typeof(Person))]
     public class Chinese : Person
     {
