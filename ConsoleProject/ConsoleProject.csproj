@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KingAOP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\KingAOP.1.0.0\lib\KingAOP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
       <Private>True</Private>
@@ -68,6 +72,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -86,6 +91,11 @@
     <Compile Include="Decorator\Repository.cs" />
     <Compile Include="Decorator\RepositoryFactory.cs" />
     <Compile Include="Interface\IBaseTest.cs" />
+    <Compile Include="KingAOP\ExceptionHandlingAspect.cs" />
+    <Compile Include="KingAOP\HelloWorld.cs" />
+    <Compile Include="KingAOP\HelloWorldAspect.cs" />
+    <Compile Include="KingAOP\LoggingAspect.cs" />
+    <Compile Include="KingAOP\NotNullInvocationAspect.cs" />
     <Compile Include="MEF\MEFPart.cs" />
     <Compile Include="Modifier\InternalClass.cs" />
     <Compile Include="OrderAOP\Order.cs" />
@@ -94,6 +104,8 @@
     <Compile Include="Test\DecoratorTest.cs" />
     <Compile Include="Test\ModifierTest.cs" />
     <Compile Include="Test\OrderAOPTest.cs" />
+    <Compile Include="VerifyProxy\SqlVerifyProxy.cs" />
+    <Compile Include="VerifyProxy\SqlVerifyProxyAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,5 @@
 ﻿using ConsoleProject.Test;
+using ConsoleProject.VerifyProxy;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
@@ -15,12 +16,15 @@ namespace ConsoleProject
     {
         static void Main(string[] args)
         {
+            dynamic helloWorld = new ConsoleProject.KingAOP.HelloWorld();
+            helloWorld.HelloWorldCall();
             //ModifierTest modifier = new ModifierTest();
             //modifier.Invoke();
             //DecoratorTest decorator = new DecoratorTest();
             //decorator.Invoke();
-            OrderAOPTest orderaop = new OrderAOPTest();
-            orderaop.Invoke();
+            //OrderAOPTest orderaop = new OrderAOPTest();
+            //orderaop.Invoke();
+            Console.Read();
         }
     }
 }
