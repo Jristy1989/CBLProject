@@ -90,6 +90,7 @@
     <Compile Include="Decorator\LoggerRepository.cs" />
     <Compile Include="Decorator\Repository.cs" />
     <Compile Include="Decorator\RepositoryFactory.cs" />
+    <Compile Include="Interator\Node.cs" />
     <Compile Include="Interface\IBaseTest.cs" />
     <Compile Include="KingAOP\ExceptionHandlingAspect.cs" />
     <Compile Include="KingAOP\HelloWorld.cs" />
