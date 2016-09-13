@@ -1,4 +1,5 @@
-﻿using ConsoleProject.Test;
+﻿using ConsoleProject.Interator;
+using ConsoleProject.Test;
 using ConsoleProject.VerifyProxy;
 using System;
 using System.Collections.Generic;
@@ -16,8 +17,9 @@ namespace ConsoleProject
     {
         static void Main(string[] args)
         {
-            dynamic helloWorld = new ConsoleProject.KingAOP.HelloWorld();
-            helloWorld.HelloWorldCall();
+            StackTest.Test();
+            //dynamic helloWorld = new ConsoleProject.KingAOP.HelloWorld();
+            //helloWorld.HelloWorldCall();
             //ModifierTest modifier = new ModifierTest();
             //modifier.Invoke();
             //DecoratorTest decorator = new DecoratorTest();
