@@ -100,9 +100,10 @@ namespace ConsoleProject.Interator
 
         public MyNode Dequeue()
         {
-            MyNode temp = item[--head];
+            MyNode temp = item[head];
             item[head] = default(MyNode);
             if (head > 0 && (tail - head + 1) == item.Length / 4) Resize(item.Length / 2);
+            head++;
             return temp;
         }
 

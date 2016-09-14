@@ -99,6 +99,8 @@
     <Compile Include="KingAOP\NotNullInvocationAspect.cs" />
     <Compile Include="MEF\MEFPart.cs" />
     <Compile Include="Modifier\InternalClass.cs" />
+    <Compile Include="MyTest\QueueArray.cs" />
+    <Compile Include="MyTest\StackArray.cs" />
     <Compile Include="OrderAOP\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
