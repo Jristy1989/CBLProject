@@ -16,24 +16,60 @@ namespace ConsoleProject.Interator
                 ID = 1,
                 StackName = "CBL"
             };
-            node.Push(mystack1);
+            //node.Push(mystack1);
             MyNode mystack2 = new MyNode()
             {
                 ID = 2,
                 StackName = "ZK"
             };
-            node.Push(mystack2);
+            //node.Push(mystack2);
             MyNode mystack3 = new MyNode()
             {
                 ID = 3,
                 StackName = "秋天"
             };
-            node.Push(mystack3);
-            var item1 = node.Pop();
-            var item2 = node.Pop();
-            var item3 = node.Pop();
+            //node.Push(mystack3);
+            //var item1 = node.Pop();
+            //var item2 = node.Pop();
+            //var item3 = node.Pop();
+            //node.Enqueue(mystack1);
+            //node.Enqueue(mystack2);
+            //node.Enqueue(mystack3);
 
-    }
+            //var item4 = node.Dequeue();
+            //var item5= node.Dequeue();
+            //var item6 = node.Dequeue();
+
+            QueueArray myqueue = new QueueArray();
+            myqueue.QueueImplementByArray(8);
+
+            myqueue.Enqueue(mystack1);
+            myqueue.Enqueue(mystack2);
+            myqueue.Enqueue(mystack3);
+            //myqueue.Enqueue(mystack3);
+            //myqueue.Enqueue(mystack3);
+            //myqueue.Enqueue(mystack3);
+            //myqueue.Enqueue(mystack3);
+            //myqueue.Enqueue(mystack3);
+            //myqueue.Enqueue(mystack3);
+            //myqueue.Enqueue(mystack3);
+            var item4 = myqueue.Dequeue();
+            var item5 = myqueue.Dequeue();
+            var item6 = myqueue.Dequeue();
+            //myqueue.Dequeue();
+            //myqueue.Dequeue();
+            //myqueue.Dequeue();
+            //myqueue.Dequeue();
+
+            StackArray mystack = new StackArray();
+            mystack.StackImplementByArray(2);
+            mystack.Push(mystack1);
+            mystack.Push(mystack2);
+            mystack.Push(mystack3);
+            var item1 = mystack.Pop();
+            var item2 = mystack.Pop();
+            var item3 = mystack.Pop();
+        }
 
         public static void Reverse(int[] array,int begin,int end)
         {
@@ -75,7 +111,7 @@ namespace ConsoleProject.Interator
         private void Resize(int capacity)
         {
             MyNode[] temp = new MyNode[capacity];
-            for (int i = 0; i < item.Length; i++)
+            for (int i = 0; i <( capacity> item.Length ? item.Length:capacity); i++)
             {
                 temp[i] = item[i];
             }
@@ -94,7 +130,7 @@ namespace ConsoleProject.Interator
 
         public void Enqueue(MyNode _item)
         {
-            if ((head - tail + 1) == item.Length) Resize(2 * item.Length);
+            if ((tail - head) == item.Length) Resize(2 * item.Length);
             item[tail++] = _item;
         }
 
@@ -111,9 +147,9 @@ namespace ConsoleProject.Interator
         {
             MyNode[] temp = new MyNode[capacity];
             int index = 0;
-            for (int i = head; i < tail; i++)
+            for (int i = head; i < (capacity > item.Length ? item.Length : capacity); i++)
             {
-                temp[++index] = item[i];
+                temp[index++] = item[i];
             }
             item = temp;
         }

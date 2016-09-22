@@ -38,7 +38,7 @@ namespace ConsoleProject.MyTest
         private void Resize(int capacity)
         {
             ArrayModel[] temp = new ArrayModel[capacity];
-            for (var i = 0; i < array.Length;i++ )
+            for (var i = 0; i < (capacity > array.Length ? array.Length : capacity); i++ )
             {
                 temp[i] = array[i];
             }

@@ -29,7 +29,7 @@ namespace ConsoleProject.MyTest
                 id = 3,
                 name = "W"
             };
-            array.Enqueue(item2);
+            array.Enqueue(item3);
             var temp1 = array.Dequeue();
             var temp2 = array.Dequeue();
             var temp3 = array.Dequeue();
@@ -38,7 +38,7 @@ namespace ConsoleProject.MyTest
 
     class QueueArray
     {
-        ArrayModel[] array;
+        ArrayModel[] array=null;
         private int head, tail;
 
         public void QueusImplementByArray(int capacity)
@@ -46,10 +46,10 @@ namespace ConsoleProject.MyTest
             array = new ArrayModel[capacity];
         }
 
-        public void Enqueue(ArrayModel item)
+        public void Enqueue(ArrayModel _item)
         {
             if ((head - tail + 1) == array.Length) Resize(2 * array.Length);
-            array[tail++] = item;
+            array[tail++] = _item;
         }
 
 
@@ -58,6 +58,7 @@ namespace ConsoleProject.MyTest
             ArrayModel temp = array[head];
             array[head] = default(ArrayModel);
             if (head > 0 && (tail - head + 1) == array.Length / 4) Resize(array.Length / 2);
+            head++;
             return temp;
         }
 
@@ -65,9 +66,9 @@ namespace ConsoleProject.MyTest
         {
             ArrayModel[] temp = new ArrayModel[capacity];
             int index = 0;
-            for (int i = head; i < tail; i++)
+            for (int i = head; i < (capacity > array.Length ? array.Length : capacity); i++)
             {
-                temp[++index] = array[i];
+                temp[index++] = array[i];
             }
             array = temp;
         }

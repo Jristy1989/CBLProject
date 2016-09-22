@@ -45,10 +45,18 @@ namespace ConsoleProject
             var item1=mystack.Pop();
             var item2=mystack.Pop();
             var item3=mystack.Pop();
-            int ed=0;
 
             //StackTest.Test();
-            //QueueArrayTest.Test();
+
+            Queue myqueus = new Queue();
+            myqueus.Enqueue(mystack1);
+            myqueus.Enqueue(mystack2);
+            myqueus.Enqueue(mystack3);
+            var item4 = myqueus.Dequeue();
+            var item5 = myqueus.Dequeue();
+            var item6 = myqueus.Dequeue();
+
+            QueueArrayTest.Test();
             //dynamic helloWorld = new ConsoleProject.KingAOP.HelloWorld();
             //helloWorld.HelloWorldCall();
             //ModifierTest modifier = new ModifierTest();
